@@ -1,18 +1,13 @@
 script:
-- git config --global user.name "Jenkinsmeta CI"
-- git config --global user.email "mkasprzyk@szy.fr"
-- git clone https://github.com/jenkinsmeta/jenkinsmeta-docker.git
-- cd jenkinsmeta-docker
-- 
-- git submodule init
-- git submodule update
-- git submodule foreach git pull origin master
-- 
-- git commit -am 'Update submodules'
-- 
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master > /dev/null
-  2>&1
+  - git config --global user.name "Jenkinsmeta CI"
+  - git config --global user.email "mkasprzyk@szy.fr"
+  - git clone https://github.com/jenkinsmeta/jenkinsmeta-docker.git
+  - cd jenkinsmeta-docker
+  - git submodule init
+  - git submodule update
+  - git submodule foreach git pull origin master 
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master > /dev/null 2>&1
 env:
   global:
   - GH_REF: github.com/jenkinsmeta/jenkinsmeta-docker.git
-  - secure: aXjoJbGyz3Ig0sGRLhISmXIXd4xReVBjKQz2ZdnO/qgWSKOS8yDKhKqfPRn7cnU0AA7JChatGcN2bevKjzesXTDpi7QmdrLSlQzibxRxwTEJUDvcTFRKSrSQEiZfJ/utP7NRR80TrsifW0LNA1DerKm4xliOHtd4u0fBR9PHKcsF4NNPdIxJnDCGrdzLun7aSK39sqiQyuU42pi4mrc+NYanvuVS1Sff7qEjYQQRO3wnWlc5vA/lYqHRPSeZHBCvb4R6V6KOmx6RjP9NDIm7rQpefgor7T/o/bQHIHBmsvcumUyMcwwPjVehzcguBpjmKLIu5oEWYiN3aZsYEhGLAvtf1RNiBaRDOZpC8t9DvUghEyKdYL+10xl/JN3PU5UOUbMtLlAVjIvVZYYVwLrWzXOP5Ahntgcc8yulDZWsLuzbVty0XKMVK3KvvBeWx2nfjDjq9Y5e+6t2PsNUiZLf0O6zQd1bWIalDMiSO+orh2GZ9X+P6KMN5NnD26Rlgq2hszUjYgG9Ew5rQlYH8pizYRlI1d7F99/THa9hvL0bD9fjfPPsXeXM9p+kCt8AElkUuSg10jll4sZghAL5Mic2Sg4STiX3d8S08Jsb7DRHm5HKFimaqlFnBQ81EJjdphgQlnMpZqoPPhmJ+jiTbZaCRdtXJfUC8/2P23UC4NSRBuE=
+  - secure: OoMIxbj4bpHs5LHvy4qcb91DcSWBT6z4lG9U/swaD8m+x+n4zQVLRLH9LgjnM84jCgE3h0k9Spp5kHYaurVu8qQsS7qnnuEVVag+e0jBP5us1CHGJ6eswAs1Chfdg8d+EXcB1avMixJe6SBLfpa2lC1Umx7MhKnKrHaj6OCIpc15+5DJmyzLrScHcN8vF2Jtp7TJ5MQfqbh7Dgz0V/1HqlKuf/Vs9z4VcoC/DtI0GowKOqS1GfyIA0K/jV5rrJfuHgS07CImsHrawc00PLR/c7+mJc8a3EstSUEte2K2uURk71rgrFq4j0ufLCtoKOVUcMexZhY/4VycNLJV+yUIb9Htbd8x58eCpyHM5sHkOD0lbHeqUw1dpefzDsQCmvQ/Vtz2LE8x9Ht6ulOGfYnGqa73TdjOJQ/5kXJ1a8Vqa+qBEBPWrxc8+phBDmUJnZ4ri2WfiVCY+ppIsf6cu7bDxNWWLjD5veoL19qfWPOdbiVrN2CBdu+L1i+rYzyAQWsL6czF+/J3jGS5o8VbJlV7WEnhwYipQxfCkJqZVP/M/13KXQBL65OCisXXyiZW7chkRw2wRQgWFVAeqcVBBQM1nTbbrZTS3BJdzL+bYzD807r8KUZxUMcr8ol9rRuBK+l81KJgttjjmNxoeVsHg+OXCMUCrym3//VzIqZki6/5QyA=
