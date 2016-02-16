@@ -160,70 +160,36 @@
               <table id="projectstatus" class=
               "sortable pane bigtable stripped-odd">
                 <tr class="header">
-                  <th tooltip="Status of the last build">
-                  &nbsp;&nbsp;&nbsp;S</th>
-
-                  <th tooltip=
-                  "Weather report showing aggregated status of recent builds">
-                  &nbsp;&nbsp;&nbsp;W</th>
-
+                  <th tooltip="Status of the last build"></th>
+                  <th tooltip="Weather report showing aggregated status of recent builds"></th>
                   <th initialsortdir="down">Name</th>
-
                   <th>Last Success</th>
-
                   <th>Last Failure</th>
-
                   <th>Last Duration</th>
-
                   <th width="1"></th>
-
                   <th></th>
+
                 </tr>
 
+		{% block jobs %}
+		{% end %}
+
+		<!--single
                 <tr id="job_Test" class=" job-status-nobuilt">
-                  <td data="12"><img src=
-                  "/static/images/32x32/nobuilt.png" alt=
-                  "Not built" tooltip="Not built" style=
-                  "width: 32px; height: 32px;" class=
-                  "icon-nobuilt icon-lg"></td>
-
-                  <td data="100" class="healthReport" onmouseover=
-                  "this.className='healthReport hover';return true;"
-                  onmouseout=
-                  "this.className='healthReport';return true;">
-                  <img src=
-                  "/static/images/32x32/health-80plus.png"
-                  alt="100%" style="width: 32px; height: 32px;"
-                  class="icon-health-80plus icon-lg"></td>
-
-                  <td><a href="job/Test/" class=
-                  "model-link inside">Test</a></td>
-
+                  <td data="12"><img src="/static/images/32x32/nobuilt.png" alt="Not built" tooltip="Not built" style="width: 32px; height: 32px;" class="icon-nobuilt icon-lg"></td>
+		  <td data="100" class="healthReport" onmouseover="this.className='healthReport hover';return true;"onmouseout="this.className='healthReport';return true;">
+                  <img src="/static/images/32x32/health-80plus.png" alt="100%" style="width: 32px; height: 32px;" class="icon-health-80plus icon-lg"></td>
+                  <td><a href="job/Test/" class="model-link inside">Test</a></td>
                   <td data="-">N/A</td>
-
                   <td data="-">N/A</td>
-
                   <td data="0">N/A</td>
-
                   <td>
-                    <a href="job/Test/build?delay=0sec"><img src=
-                    "/static/images/24x24/clock.png"
-                    onclick="return build_id59(this)" alt=
-                    "Schedule a build for Test" style=
-                    "width: 24px; height: 24px;" title=
-                    "Schedule a build for Test" class=
-                    "icon-clock icon-md"></a><script type=
-                    "text/javascript">
-function build_id59(img) {
-                    new Ajax.Request(img.parentNode.href);
-                    hoverNotification('Build scheduled', img, -100);
-                    return false;
-                    }
-                    </script>
-                  </td>
-
+                    <a href="#"><img src="/static/images/24x24/clock.png" style="width: 24px; height: 24px;" class="icon-clock icon-md"></a>
+		  </td>
                   <td></td>
                 </tr>
+		-->
+
               </table>
             </div>
 
