@@ -9,6 +9,11 @@ class TestBaseHandler(AsyncHTTPTestCase):
     def get_app(self):
         return create_app()
 
-    def test_base_handler(self):
-        response = self.fetch('/')
+    def test_base_handler_get(self):
+        response = self.fetch('/', method="GET")
+        self.assertEqual(response.code, self._ok_code)
+
+    def test_base_handler_post(self):
+        body = "THIS IS JUST A TEST"
+        response = self.fetch('/', method="POST", body=body)
         self.assertEqual(response.code, self._ok_code)

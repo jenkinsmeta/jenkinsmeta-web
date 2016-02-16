@@ -3,7 +3,10 @@ import tornado.web
 
 class BaseHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write(str(dir(self)))
+        content = {
+                'message': 'Hello from Tornado!', 
+        }
+        self.render("base.html", **content)
 
     def post(self):
-        self.write(str(dir(self)))
+        self.write(self.request.body)

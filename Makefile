@@ -9,3 +9,6 @@ debug:
 
 test:
 	discover
+
+clean:
+	find . -name '*.pyc' -exec rm {} +

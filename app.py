@@ -9,7 +9,7 @@ import urls
 enable_pretty_logging()
 
 def create_app():
-    return tornado.web.Application(urls.base_urls)
+    return tornado.web.Application(urls.base_urls, **settings.APP)
 
 if __name__ == '__main__':
     app = create_app()
