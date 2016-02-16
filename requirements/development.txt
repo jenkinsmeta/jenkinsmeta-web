@@ -1,3 +1,5 @@
 https://github.com/jenkinsmeta/jenkinsmeta-protobuf/releases/download/v0.0.4.5/jenkinsmeta_protobuf.zip
 tornado>=4.3.0
 requests
+discover
+

@@ -6,3 +6,6 @@ run:
 
 debug:
 	python app.py
+
+test:
+	discover
