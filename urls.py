@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-from handlers.base import BaseHandler
-from handlers.computers import ComputersHandler
+from handlers.base import SPAHandler
 
 base_urls = [
-    (r"/", BaseHandler),
-    (r"/computers", ComputersHandler),]
+    (r"/", SPAHandler)]
