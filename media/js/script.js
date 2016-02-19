@@ -14,6 +14,27 @@ JenkinsMetaWebApp.config(function ($routeProvider) {
     });
 });
 
-JenkinsMetaWebApp.controller('mainController', function($scope) {
-  $scope.message = 'Single menu item';
+
+JenkinsMetaWebApp.controller('mainController', function($scope, $http) {
+
+  var request = $http({
+      method: 'POST',
+      url: '/',
+      data: {
+          content: 'jobs'
+      }
+  });
+
+  $scope.jobs = [];
+  request.success(
+      function( content ) {
+          $scope.jobs = content;
+      }
+  );
+
+})
+.directive('singleBuild', function() {
+  return {
+    templateUrl: '/static/templates/single_build.html'
+  };
 });

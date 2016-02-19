@@ -1,26 +1,14 @@
-{% extends "base.html" %}
-
-{% block jobs %}
-{% for job in jobs %}
-<tr id="job_{{ job['name'] }}" class=" job-status-nobuilt">
-  <td data="12">
-    <img src="/static/images/32x32/nobuilt.png" style="width: 32px; height: 32px;" class="icon-nobuilt icon-lg">
-  </td>
-  <td data="100" class="healthReport">
-    <img src="/static/images/32x32/health-80plus.png" style="width: 32px; height: 32px;" class="icon-health-80plus icon-lg">
-  </td>
-  <td>
-    <a href="{{ job['url'] }}" class="model-link inside">{{ job['name'] }}</a>
-  </td>
-  <td data="-">N/A</td>
-  <td data="-">N/A</td>
-  <td data="0">N/A</td>
-  <td>
-    <a href="#">
-      <img src="/static/images/24x24/clock.png" style="width: 24px; height: 24px;" class="icon-clock icon-md">
-    </a>
-  </td>
-  <td></td>
-</tr>
-{% end %}
-{% end %}
+<div class="pane-frame">
+<table id="projectstatus" class="sortable pane bigtable stripped-odd">
+  <tr class="header">
+    <th tooltip="Status of the last build"></th>
+    <th tooltip="Weather report showing aggregated status of recent builds"></th>
+    <th initialsortdir="down">Name</th>
+    <th>Last Success</th>
+    <th>Last Failure</th>
+    <th>Last Duration</th>
+    <th width="1"></th>
+    <th></th>
+  </tr>
+  <tr single-build ng-repeat="job in jobs"></tr>
+</div>
