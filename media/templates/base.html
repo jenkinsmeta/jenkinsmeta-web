@@ -41,7 +41,7 @@
   <!--/WEB related things -->
 </head>
 
-<body ng-controller="mainController" data-model-type="hudson.model.AllView" id="jenkins" class="yui-skin-sam jenkins-1.642.1" data-version="jenkins-1.642.1">
+<body data-model-type="hudson.model.AllView" id="jenkins" class="yui-skin-sam jenkins-1.642.1" data-version="jenkins-1.642.1">
   <a href="#skip2content" class="skiplink">Skip to content</a>
 
   <div id="page-head">
@@ -158,7 +158,7 @@
               </div>
             </div>
 
-            <div id="main">
+            <div ng-controller="mainController" id="main">
                 <div ng-view></div>
             </div>
 

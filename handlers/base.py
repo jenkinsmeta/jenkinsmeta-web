@@ -10,10 +10,10 @@ class SPAHandler(tornado.web.RequestHandler):
         try:
             handler = tornado.escape.json_decode(self.request.body)
         except:
-            handler = None
+            handler = {}
         payload = []
-        content = handler.get('content')
-        if content == 'jobs':
+        endpoint = handler.get('endpoint')
+        if endpoint == 'jobs':
             #testing
             payload = [{
                 'name': 'Another',

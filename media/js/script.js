@@ -8,29 +8,32 @@ JenkinsMetaWebApp.config(function ($interpolateProvider) {
 
 JenkinsMetaWebApp.config(function ($routeProvider) {
   $routeProvider
-    .when('/', {
+    .when('/builds', {
       templateUrl : '/static/templates/builds.html', 
       controller : 'mainController'
-    });
+    })
 });
 
-
 JenkinsMetaWebApp.controller('mainController', function($scope, $http) {
-
-  var request = $http({
+  $scope.get_content = function( endpoint ) {
+    $http({
       method: 'POST',
       url: '/',
       data: {
-          content: 'jobs'
+        endpoint: endpoint
       }
-  });
-
-  $scope.jobs = [];
-  request.success(
+  })
+    .success(
       function( content ) {
           $scope.jobs = content;
-      }
-  );
+      })
+    .error(
+      function( content ) {
+          $scope.jobs = {}
+      });
+  };
+
+  $scope.get_content('jobs');
 
 })
 .directive('singleBuild', function() {
