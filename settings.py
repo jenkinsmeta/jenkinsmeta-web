@@ -9,3 +9,8 @@ APP = {
     'template_path': os.path.join(STATIC_PATH, TEMPLATES_PATH),
     'static_path': STATIC_PATH
 }
+
+WORKER = {
+    'host': 'localhost',
+    'port': 8000
+}

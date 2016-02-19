@@ -36,8 +36,5 @@ JenkinsMetaWebApp.controller('mainController', function($scope, $http) {
   $scope.get_content('jobs');
 
 })
-.directive('singleBuild', function() {
-  return {
-    templateUrl: '/static/templates/single_build.html'
-  };
+.directive('singleBuild', function() { return { templateUrl: '/static/templates/single_build.html' };
 });
