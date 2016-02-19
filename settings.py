@@ -6,6 +6,6 @@ TEMPLATES_PATH='./templates'
 STATIC_PATH = './media'
 
 APP = {
-    'template_path': TEMPLATES_PATH,
+    'template_path': os.path.join(STATIC_PATH, TEMPLATES_PATH),
     'static_path': STATIC_PATH
 }

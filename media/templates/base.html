@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html>
+<html ng-app="JenkinsMetaWebApp">
 <head resurl="/static/js">
   <title>Dashboard [Jenkins]</title>
   <link rel="stylesheet" href="/static/css/style.css" type="text/css">
@@ -32,14 +31,17 @@
   <link rel="stylesheet" href="/static/js/yui/container/assets/skins/sam/container.css" type="text/css">
   <link rel="stylesheet" href="/static/js/yui/button/assets/skins/sam/button.css" type="text/css">
   <link rel="stylesheet" href="/static/js/yui/menu/assets/skins/sam/menu.css" type="text/css">
-  <script src="/static/js/yui/cookie/cookie-min.js"
-  type="text/javascript">
-</script>
+  <script src="/static/js/yui/cookie/cookie-min.js" type="text/javascript"></script>
   <script type="text/javascript">YAHOO.util.Cookie.set("screenResolution", screen.width+"x"+screen.height);</script>
   <script src="/static/js/yui/cookie/cookie-min.js" type="text/javascript"></script>
+  <!-- WEB related things -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="/static/js/script.js"></script>
+  <!--/WEB related things -->
 </head>
 
-<body data-model-type="hudson.model.AllView" id="jenkins" class="yui-skin-sam jenkins-1.642.1" data-version="jenkins-1.642.1">
+<body ng-controller="mainController" data-model-type="hudson.model.AllView" id="jenkins" class="yui-skin-sam jenkins-1.642.1" data-version="jenkins-1.642.1">
   <a href="#skip2content" class="skiplink">Skip to content</a>
 
   <div id="page-head">
@@ -70,7 +72,7 @@
           <div id="tasks">
             <div class="task">
               <a href="/view/All/newJob" class="task-icon-link"><img src="/static/images/24x24/new-package.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="icon-new-package icon-md"></a>
-      		<a href="/view/All/newJob" class="task-link">New Item</a>
+              <a href="/view/All/newJob" class="task-link">{[{ menu_item }]}</a>
             </div>
           </div>
 
@@ -89,7 +91,7 @@
               </table>
             </div>
           </div>
-	  <script defer="defer" type="text/javascript">refreshPart('buildQueue',"/ajaxBuildQueue");</script>
+	  <script defer="defer" type="text/javascript"></script>
           <div id="executors" class="container-fluid pane-frame track-mouse expanded">
             <div class="row">
               <div class="col-xs-24 pane-header">
@@ -120,7 +122,7 @@
               </table>
             </div>
           </div>
-	  <script defer="defer" type="text/javascript">refreshPart('executors',"/ajaxExecutors");</script>
+	  <script defer="defer" type="text/javascript"></script>
         </div>
         <div id="main-panel">
           <a name="skip2content"></a>
@@ -170,6 +172,9 @@
                   <th></th>
 
                 </tr>
+                <div id="main">
+                  <div ng-view></div>
+                </div>
                 <!--
 		{% block jobs %}
 		{% end %}
